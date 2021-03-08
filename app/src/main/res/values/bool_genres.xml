@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="book_genres">
+        <item>(all)</item>
+        <item>Fiction</item>
+        <item>Fantasy</item>
+        <item>Science Fiction</item>
+        <item>Romance</item>
+        <item>Children</item>
+        <item>History</item>
+        <item>Science</item>
+        <item>Architecture</item>
+        <item>Biography</item>
+        <item>Cooking</item>
+        <item>Travel</item>
+        <item>Sports</item>
+    </string-array>
+</resources>
