@@ -1,4 +1,4 @@
-package gr.ihu.ct.cinema;
+package gr.ihu.msc.cinema;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,13 +10,12 @@ import android.widget.TextView;
 
 public class ListActivity extends AppCompatActivity {
     TextView textViewInfo;
-    ListView listViewBooks;
+    ListView listViewMovies;
 
-    private void findViews(){
+    private void findViews() {
         textViewInfo = (TextView)findViewById(R.id.textViewInfo);
-        listViewBooks = (ListView)findViewById(R.id.listViewBooks);
+        listViewMovies = (ListView)findViewById(R.id.listViewMovies);
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,22 +27,23 @@ public class ListActivity extends AppCompatActivity {
 
         //get user filters from Intent
         Intent intent = getIntent();
-        String filterAuthor = intent.getStringExtra("AUTHOR");
         String filterTitle = intent.getStringExtra("TITLE");
-        int filterGenreId = intent.getIntExtra("GENREID", 0);
-
+        String filterDate = intent.getStringExtra("DATE");
+        String filterTime = intent.getStringExtra("TIME");
+        String filterPrice = intent.getStringExtra("PRICE");
+        int filterCategoryId = intent.getIntExtra("CATEGORYID", 0);
 
         findViews();
         //show user filters for information
-        String message = String.format("Author: %s\nTitle: %s\nGenreId: %d", filterAuthor, filterTitle, filterGenreId);
+        String message = String.format("Title: %s\nCategory: %s\nDate: %s\nTime: %s\nPrice:%s",filterTitle, filterCategoryId, filterDate,filterTime,filterPrice);
         textViewInfo.setText(message);
         //show all genres on our list
         ArrayAdapter<CharSequence> genresAdapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.book_genres,
+                R.array.movies_categories,
                 android.R.layout.simple_list_item_1
         );
-        listViewBooks.setAdapter(genresAdapter);
+        listViewMovies.setAdapter(genresAdapter);
     }
     @Override
     protected void onPause() {

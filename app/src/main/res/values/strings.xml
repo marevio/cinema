@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">ΒΙΒΛΙΟΠΩΛΕΙΟ</string>
-    <string name="label_author">Author</string>
-    <string name="label_title">Title</string>
-    <string name="label_genre">Genre</string>
-    <string name="label_search">Search</string>
+    <string name="app_name">Cinema</string>
+    <string name="label_title">Μovie Title</string>
+    <string name="label_category">Movie Category</string>
+    <string name="label_date">Movie Date</string>
+    <string name="label_time">Movie Time</string>
+    <string name="label_price">Ticket Price</string>
+    <string name="button_search">Search</string>
 </resources>

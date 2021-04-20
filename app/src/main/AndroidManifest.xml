@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gr.ihu.ct.cinema">
+    package="gr.ihu.msc.cinema">
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Week2">
-        <activity android:name="gr.ihu.ct.cinema.ListActivity"></activity>
-        <activity android:name="gr.ihu.ct.cinema.MainActivity">
+        android:theme="@style/Theme.Cinema">
+        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

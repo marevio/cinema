@@ -1,4 +1,4 @@
-package gr.ihu.ct.cinema;
+package gr.ihu.msc.cinema;
 
 import org.junit.Test;
 
