@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Spinner  spinnerTime;
     private Spinner  spinnerPrice;
-    private Button buttonSearch;
+    private Button   buttonSearch;
 
     /*public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -108,10 +108,6 @@ public class MainActivity extends AppCompatActivity {
                ((TextView) spinnerPrice.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
            }
        } );
-
-
-
-
 
 
 

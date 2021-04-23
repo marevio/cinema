@@ -92,20 +92,16 @@ public class DataStore {
             HashMap<String, Object> movie = new HashMap<String, Object>();
 
             movie.put(DataStore.KEY_ID, movieID);
-
             movie.put(DataStore.KEY_TITLE, movieTitle);
-            movie.put(DataStore.KEY_CATEGORYID,movieCategoryId);
-            movie.put(DataStore.KEY_CATEGORYNAME, movieCategoryName);
+            movie.put(DataStore.KEY_CATEGORYID,movieCategoryName);
             movie.put(DataStore.KEY_DIRECTOR, movieDirector);
             movie.put(DataStore.KEY_ACTOR, movieActor);
             movie.put(DataStore.KEY_DIRECTOR, movieDirector);
             movie.put(DataStore.KEY_IMBDURL, movieImbdUrl);
             movie.put(DataStore.KEY_COVERURL, movieCoverUrl);
             movie.put(DataStore.KEY_DATE, movieDate);
-            movie.put(DataStore.KEY_TIMEID, movieTimeId);
-            movie.put(DataStore.KEY_TIMENAME, movieTimeName);
+            movie.put(DataStore.KEY_TIMEID, movieTimeName);
             movie.put(DataStore.KEY_PRICEID, moviePriceName);
-            movie.put(DataStore.KEY_PRICENAME, moviePriceName);
 
 
 
