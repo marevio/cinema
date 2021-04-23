@@ -18,11 +18,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import gr.ihu.msc.cinema.classes.DataStore;
+
 import static java.lang.String.format;
 
 public class MainActivity extends AppCompatActivity {
     private EditText textTitle;
-    private Spinner spinnerCategory;
+    private Spinner  spinnerCategory;
     private EditText textDate;
     private EditText textTime;
     private EditText textPrice;
@@ -38,20 +40,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textTitle = (EditText)findViewById(R.id.editTextTitle);
+        spinnerCategory = (Spinner)findViewById(R.id.spinnerCategory);
         textDate = (EditText)findViewById(R.id.editTextDate);
         textTime = (EditText)findViewById(R.id.editTextTime);
         textPrice = (EditText)findViewById(R.id.editTextPrice);
-        spinnerCategory = (Spinner)findViewById(R.id.spinnerCategory);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
 
+       DataStore.Init(getApplicationContext());
 
-        ArrayAdapter<CharSequence> genreAdapter = ArrayAdapter.createFromResource(
+       ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.movies_categories,
                 android.R.layout.simple_spinner_item
         );
-        genreAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCategory.setAdapter(genreAdapter);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategory.setAdapter(categoryAdapter);
 
         spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -84,19 +87,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String filterTitle = textTitle.getText().toString();
-                String filterDate = textDate.getText().toString();
-                String filterTime = textTitle.getText().toString();
-                String filterPrice = textDate.getText().toString();
                 int filterCategoryId = spinnerCategory.getSelectedItemPosition();
+                String filterDate = textDate.getText().toString();
+                String filterTime = textTime.getText().toString();
+                String filterPrice = textPrice.getText().toString();
+
 
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
 
                 intent.putExtra("TITLE", filterTitle);
+                intent.putExtra("CATEGORYID", filterCategoryId);
                 intent.putExtra("DATE", filterDate);
                 intent.putExtra("TIME", filterTime);
                 intent.putExtra("PRICE", filterPrice);
-                intent.putExtra("CATEGORYID", filterCategoryId);
-                 startActivity(intent);
+
+                startActivity(intent);
             }
         });
 

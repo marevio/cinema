@@ -1,5 +1,5 @@
 {
-  "Μοvies": [
+  "movies": [
     {
       "ID": 1,
       "TITLE": "Tenet",
@@ -8,9 +8,9 @@
       "CATEGORYID": 1,
       "IMBDURL": "https://www.imdb.com/title/tt6723592/?ref_=adv_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt6723592/mediaviewer/rm1748282625/?ref_=ext_shr_lnk",
-      "Date": "12/07/2021",
-      "Time": "08:00",
-      "Price": "9"
+      "DATE": "12/07/2021",
+      "TIME": "08:00",
+      "PRICE": "9"
     },
     {
       "ID": 2,
@@ -20,9 +20,9 @@
       "CATEGORYID": 2,
       "IMBDURL": "https://www.imdb.com/title/tt1345836/?ref_=ttls_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt1345836/mediaviewer/rm834516224/?ref_=ext_shr_lnk",
-      "Date": "20/07/2021",
-      "Time": "09:00",
-      "Price": "10"
+      "DATE": "20/07/2021",
+      "TIME": "09:00",
+      "PRICE": "10"
     },
     {
       "ID": 3,
@@ -32,21 +32,21 @@
       "CATEGORYID": 3,
       "IMBDURL": "https://www.imdb.com/title/tt1911553/?ref_=ttls_li_tt",
       "COVERURL": "http://ecx.images-amazon.com/images/I/51XoshEXVEL.jpg",
-      "Date": "22/07/2021",
-      "Time": "10:00",
-      "Price": "9"
+      "DATE": "22/07/2021",
+      "TIME": "10:00",
+      "PRICE": "9"
     },
     {
       "ID": 4,
       "TITLE": "Coyote Ugly",
       "DIRECTOR": "David McNally",
-      "ACTOR":"Piper Perabo",
+      "ACTOR": "Piper Perabo",
       "CATEGORYID": 4,
       "IMBDURL": "https://www.imdb.com/title/tt0200550/?ref_=ttls_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt0200550/mediaviewer/rm1674468608/?ref_=ext_shr_lnk",
-      "Date": "30/07/2021",
-      "Time": "09:00",
-      "Price": "8"
+      "DATE": "30/07/2021",
+      "TIME": "09:00",
+      "PRICE": "8"
     },
     {
       "ID": 5,
@@ -56,21 +56,21 @@
       "CATEGORYID": 5,
       "IMBDURL": "https://www.imdb.com/title/tt7653254/",
       "COVERURL": "https://www.imdb.com/title/tt7653254/mediaviewer/rm1922861057/?ref_=ext_shr_lnk",
-      "Date": "20/07/2021",
-      "Time": "12:00",
-      "Price": "8"
+      "DATE": "20/07/2021",
+      "TIME": "12:00",
+      "PRICE": "8"
     },
     {
       "ID": 6,
       "TITLE": "The Crown ",
       "DIRECTOR": "Peter Morgan",
-      "ACTOR":" Claire Foy",
+      "ACTOR": "Claire Foy",
       "CATEGORYID": 6,
       "IMBDURL": "https://www.imdb.com/title/tt4786824/?ref_=adv_li_i",
       "COVERURL": "https://www.imdb.com/title/tt4786824/mediaviewer/rm2835667201/?ref_=ext_shr_lnk",
-      "Date": "15/07/2021",
-      "Time": "09:00",
-      "Price": "10"
+      "DATE": "15/07/2021",
+      "TIME": "09:00",
+      "PRICE": "10"
     }
   ]
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -48,7 +49,12 @@ public class DataStore {
         //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
         JSONObject json = JsonParser.getJsonObject(contents);
-        JSONArray jMovies = json.optJSONArray("movies");
+        JSONArray jMovies = null;
+        try {
+            jMovies = json.getJSONArray("movies");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         if (jMovies == null) return;
         int nMovies = jMovies.length();
