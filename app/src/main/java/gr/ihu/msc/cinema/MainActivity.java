@@ -2,6 +2,7 @@ package gr.ihu.msc.cinema;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText textTitle;
     private Spinner  spinnerCategory;
     private EditText textDate;
-    private EditText textTime;
-    private EditText textPrice;
+
+    private Spinner  spinnerTime;
+    private Spinner  spinnerPrice;
     private Button buttonSearch;
 
     /*public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,26 +45,75 @@ public class MainActivity extends AppCompatActivity {
         textTitle = (EditText)findViewById(R.id.editTextTitle);
         spinnerCategory = (Spinner)findViewById(R.id.spinnerCategory);
         textDate = (EditText)findViewById(R.id.editTextDate);
-        textTime = (EditText)findViewById(R.id.editTextTime);
-        textPrice = (EditText)findViewById(R.id.editTextPrice);
+        spinnerTime = (Spinner)findViewById(R.id.spinnerTime);
+        spinnerPrice = (Spinner)findViewById(R.id.spinnerPrice);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
 
        DataStore.Init(getApplicationContext());
+
+
 
        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.movies_categories,
                 android.R.layout.simple_spinner_item
         );
+
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(categoryAdapter);
+
+
+       ArrayAdapter<CharSequence> timeAdapter = ArrayAdapter.createFromResource(
+               this,
+               R.array.movies_time,
+               android.R.layout.simple_spinner_item
+       );
+       timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       spinnerTime.setAdapter(timeAdapter);
+
+
+
+       ArrayAdapter<CharSequence> priceAdapter = ArrayAdapter.createFromResource(
+               this,
+               R.array.movies_price,
+               android.R.layout.simple_spinner_item
+       );
+       priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       spinnerPrice.setAdapter(priceAdapter);
+
+
+
+
+
+
 
         spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 ((TextView) spinnerCategory.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
             }
-        });
+        }
+        );
+
+       spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+           @Override
+           public void onGlobalLayout() {
+               ((TextView) spinnerTime.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
+           }
+       } );
+
+       spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+           @Override
+           public void onGlobalLayout() {
+               ((TextView) spinnerPrice.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
+           }
+       } );
+
+
+
+
+
+
 
        /* buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +141,9 @@ public class MainActivity extends AppCompatActivity {
                 String filterTitle = textTitle.getText().toString();
                 int filterCategoryId = spinnerCategory.getSelectedItemPosition();
                 String filterDate = textDate.getText().toString();
-                String filterTime = textTime.getText().toString();
-                String filterPrice = textPrice.getText().toString();
+                int filterTimeId = spinnerTime.getSelectedItemPosition();
+                int filterPriceId = spinnerPrice.getSelectedItemPosition();
+
 
 
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
@@ -98,8 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("TITLE", filterTitle);
                 intent.putExtra("CATEGORYID", filterCategoryId);
                 intent.putExtra("DATE", filterDate);
-                intent.putExtra("TIME", filterTime);
-                intent.putExtra("PRICE", filterPrice);
+                intent.putExtra("TIMEID", filterTimeId);
+                intent.putExtra("PRICEID", filterPriceId);
+
 
                 startActivity(intent);
             }

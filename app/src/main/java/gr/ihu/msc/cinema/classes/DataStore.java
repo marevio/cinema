@@ -26,22 +26,29 @@ public class DataStore {
     public static String KEY_IMBDURL = "IMBDURL";
     public static String KEY_COVERURL = "COVERURL";
     public static String KEY_DATE = "DATE";
-    public static String KEY_TIME = "TIME";
-    public static String KEY_PRICE = "PRICE";
+    public static String KEY_TIMEID = "TIMEID";
+    public static String KEY_TIMENAME = "TIMENAME";
+    public static String KEY_PRICEID = "PRICEID";
+    public static String KEY_PRICENAME = "PRICENAME";
 
 
     public static Context AppContext = null;
     public static Resources AppResources = null;
     public static String[] Categories = null;
+    public static String[] Time= null;
+    public static String[] Price = null;
     public static ArrayList<HashMap<String, Object>> Movies= new ArrayList<HashMap<String, Object>>();
 
     public static void Init(Context context){
         AppContext = context;
         AppResources = AppContext.getResources();
         Categories = AppResources.getStringArray(R.array.movies_categories);
+        Time = AppResources.getStringArray(R.array.movies_time);
+        Price = AppResources.getStringArray(R.array.movies_price);
     }
 
-    public static void LoadMovies(String filterTitle, int filterCategoryId, String filterDate, String filterTime, String filterPrice) {
+
+    public static void LoadMovies(String filterTitle, int filterCategoryId, String filterDate, int filterTimeId, int filterPriceId) {
         DataStore.Movies.clear();
 
         String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
@@ -70,13 +77,16 @@ public class DataStore {
             String movieImbdUrl = jCurMovie.optString(DataStore.KEY_IMBDURL);
             String movieCoverUrl = jCurMovie.optString(DataStore.KEY_COVERURL);
             String movieDate = jCurMovie.optString(DataStore.KEY_DATE);
-            String movieTime = jCurMovie.optString(DataStore.KEY_TIME);
-            String moviePrice = jCurMovie.optString(DataStore.KEY_PRICE);
+            int movieTimeId = jCurMovie.optInt(DataStore.KEY_TIMEID,0);
+            int moviePriceId = jCurMovie.optInt(DataStore.KEY_PRICEID,0);
+
 
 
 
             //get Category name by ID
             String movieCategoryName = DataStore.Categories[movieCategoryId];
+            String movieTimeName = DataStore.Time[movieTimeId];
+            String moviePriceName = DataStore.Price[moviePriceId];
 
             // hold each book in a HashMap (Associative Array)
             HashMap<String, Object> movie = new HashMap<String, Object>();
@@ -92,8 +102,10 @@ public class DataStore {
             movie.put(DataStore.KEY_IMBDURL, movieImbdUrl);
             movie.put(DataStore.KEY_COVERURL, movieCoverUrl);
             movie.put(DataStore.KEY_DATE, movieDate);
-            movie.put(DataStore.KEY_TIME, movieTime);
-            movie.put(DataStore.KEY_PRICE, moviePrice);
+            movie.put(DataStore.KEY_TIMEID, movieTimeId);
+            movie.put(DataStore.KEY_TIMENAME, movieTimeName);
+            movie.put(DataStore.KEY_PRICEID, moviePriceName);
+            movie.put(DataStore.KEY_PRICENAME, moviePriceName);
 
 
 

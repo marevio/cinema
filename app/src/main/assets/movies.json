@@ -9,8 +9,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt6723592/?ref_=adv_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt6723592/mediaviewer/rm1748282625/?ref_=ext_shr_lnk",
       "DATE": "12/07/2021",
-      "TIME": "08:00",
-      "PRICE": "9"
+      "TIMEID": 1,
+      "PRICEID": 2
     },
     {
       "ID": 2,
@@ -21,8 +21,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt1345836/?ref_=ttls_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt1345836/mediaviewer/rm834516224/?ref_=ext_shr_lnk",
       "DATE": "20/07/2021",
-      "TIME": "09:00",
-      "PRICE": "10"
+      "TIMEID": 1,
+      "PRICEID": 2
     },
     {
       "ID": 3,
@@ -33,8 +33,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt1911553/?ref_=ttls_li_tt",
       "COVERURL": "http://ecx.images-amazon.com/images/I/51XoshEXVEL.jpg",
       "DATE": "22/07/2021",
-      "TIME": "10:00",
-      "PRICE": "9"
+      "TIMEID": 2,
+      "PRICEID": 3
     },
     {
       "ID": 4,
@@ -45,8 +45,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt0200550/?ref_=ttls_li_tt",
       "COVERURL": "https://www.imdb.com/title/tt0200550/mediaviewer/rm1674468608/?ref_=ext_shr_lnk",
       "DATE": "30/07/2021",
-      "TIME": "09:00",
-      "PRICE": "8"
+      "TIMEID": 5,
+      "PRICEID": 4
     },
     {
       "ID": 5,
@@ -57,8 +57,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt7653254/",
       "COVERURL": "https://www.imdb.com/title/tt7653254/mediaviewer/rm1922861057/?ref_=ext_shr_lnk",
       "DATE": "20/07/2021",
-      "TIME": "12:00",
-      "PRICE": "8"
+      "TIMEID": 4,
+      "PRICEID": 3
     },
     {
       "ID": 6,
@@ -69,8 +69,8 @@
       "IMBDURL": "https://www.imdb.com/title/tt4786824/?ref_=adv_li_i",
       "COVERURL": "https://www.imdb.com/title/tt4786824/mediaviewer/rm2835667201/?ref_=ext_shr_lnk",
       "DATE": "15/07/2021",
-      "TIME": "09:00",
-      "PRICE": "10"
+      "TIMEID": 3,
+      "PRICEID": 1
     }
   ]
 }

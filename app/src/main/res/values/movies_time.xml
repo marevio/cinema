@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movies_time">
+        <item><b><font fgcolor='#BFA98C'>(Όλα)</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>18:00 μμ</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>19:00 μμ</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>20:00 μμ</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>21:00 μμ</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>22:00 μμ</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>23:00</font></b></item>
+        <item><b><font fgcolor='#BFA98C'>24:00</font></b></item>
+    </string-array>
+</resources>

@@ -34,16 +34,18 @@ public class ListActivity extends AppCompatActivity {
         String filterTitle = intent.getStringExtra("TITLE");
         int filterCategoryId = intent.getIntExtra("CATEGORYID", 0);
         String filterDate = intent.getStringExtra("DATE");
-        String filterTime = intent.getStringExtra("TIME");
-        String filterPrice = intent.getStringExtra("PRICE");
+        //String filterTime = intent.getStringExtra("TIME");
+        int filterTimeId = intent.getIntExtra("TIMEID", 0);
+        //String filterPrice = intent.getStringExtra("PRICE");
+        int filterPriceId = intent.getIntExtra("PRICEID", 0);
 
 
         findViews();
         //show user filters for information
-        String message = String.format("Title: %s\nCategory: %s\nDate: %s\nTime: %s\nPrice:%s",filterTitle, filterCategoryId, filterDate,filterTime,filterPrice);
+        String message = String.format("Title: %s\nCategory: %s\nDate: %s\nTime: %s\nPrice:%s", filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
         textViewInfo.setText(message);
         //show all genres on our list
-        DataStore.LoadMovies(filterTitle, filterCategoryId, filterDate,filterTime,filterPrice);
+        DataStore.LoadMovies(filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
 
 
       /*  ArrayAdapter<CharSequence> categoriesAdapter = ArrayAdapter.createFromResource(
@@ -58,7 +60,7 @@ public class ListActivity extends AppCompatActivity {
                 this,
                 DataStore.Movies,
                 R.layout.list_item,
-                new String[] {DataStore.KEY_TITLE, DataStore.KEY_CATEGORYID, DataStore.KEY_DATE, DataStore.KEY_TIME, DataStore.KEY_PRICE},
+                new String[] {DataStore.KEY_TITLE, DataStore.KEY_CATEGORYID, DataStore.KEY_DATE, DataStore.KEY_TIMEID, DataStore.KEY_PRICEID},
                 new int[] {R.id.movie_item_title, R.id.movie_item_category, R.id.movie_item_date,R.id.movie_item_time,R.id.movie_item_price}
         );
         listViewMovies.setAdapter(moviesAdapter);
