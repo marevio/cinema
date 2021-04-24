@@ -62,7 +62,7 @@ public class ListActivity extends AppCompatActivity {
                 this,
                 DataStore.Movies,
                 R.layout.list_item,
-                new String[] {DataStore.KEY_TITLE, DataStore.KEY_CATEGORYID, DataStore.KEY_DATE, DataStore.KEY_TIMEID, DataStore.KEY_PRICEID},
+                new String[] {DataStore.KEY_TITLE, DataStore.KEY_CATEGORYNAME, DataStore.KEY_DATE, DataStore.KEY_TIMENAME, DataStore.KEY_PRICENAME},
                 new int[] {R.id.movie_item_title, R.id.movie_item_category, R.id.movie_item_date,R.id.movie_item_time,R.id.movie_item_price}
         );
         listViewMovies.setAdapter(moviesAdapter);
@@ -70,11 +70,12 @@ public class ListActivity extends AppCompatActivity {
         listViewMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent detailsIntent= new Intent(ListActivity.this,DetailsActivity.class);
-               startActivity(detailsIntent);
-
+                Intent detailsIntent = new Intent(ListActivity.this, DetailsActivity.class);
+                detailsIntent.putExtra(DataStore.KEY_POSITION, position);
+                startActivity(detailsIntent);
             }
         });
+
     }
     @Override
     protected void onPause() {

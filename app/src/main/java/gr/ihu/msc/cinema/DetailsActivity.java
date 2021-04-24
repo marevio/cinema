@@ -25,12 +25,11 @@ public class DetailsActivity extends AppCompatActivity {
     HashMap<String, Object> movie = null;
 
     private void findViews() {
-        textViewTitle = (TextView)findViewById(R.id.movie_details_title);
+        textViewTitle = (TextView) findViewById(R.id.movie_details_title);
         textViewCategory = (TextView)findViewById(R.id.movie_details_category);
         textViewDate = (TextView)findViewById(R.id.movie_details_date);
         textViewTime = (TextView)findViewById(R.id.movie_details_time);
         textViewPrice = (TextView)findViewById(R.id.movie_details_price);
-
         buttonVisitWebsite = (Button)findViewById(R.id.buttonVisitWebsite);
     }
 
@@ -74,4 +73,4 @@ public class DetailsActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.hold, R.anim.push_out_to_right);
         super.onPause();
     }
-    }
+}
