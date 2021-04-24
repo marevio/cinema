@@ -2,7 +2,10 @@ package gr.ihu.msc.cinema;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.widget.DatePicker;
+import android.widget.Button;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,12 +16,12 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 import gr.ihu.msc.cinema.classes.DataStore;
 
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private Spinner  spinnerPrice;
     private Button   buttonSearch;
 
+    private DatePickerDialog datePickerDialog;
+    private Button dateButton;
+
     /*public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);*/
@@ -44,14 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
         textTitle = (EditText)findViewById(R.id.editTextTitle);
         spinnerCategory = (Spinner)findViewById(R.id.spinnerCategory);
-        textDate = (EditText)findViewById(R.id.editTextDate);
+        /*textDate = (EditText)findViewById(R.id.editTextDate);*/
         spinnerTime = (Spinner)findViewById(R.id.spinnerTime);
         spinnerPrice = (Spinner)findViewById(R.id.spinnerPrice);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
 
+       initDatePicker();
+       dateButton = findViewById(R.id.datePickerButton);
+       dateButton.setText(getTodaysDate());
+        
        DataStore.Init(getApplicationContext());
-
-
 
        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -80,11 +88,6 @@ public class MainActivity extends AppCompatActivity {
        );
        priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
        spinnerPrice.setAdapter(priceAdapter);
-
-
-
-
-
 
 
         spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -155,20 +158,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    /*public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_exit:
-                finish();
-                return true;
-            case R.id.menu_settings:
-                Toast.makeText(this, "Under construction", Toast.LENGTH_LONG).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
     }
-    /*protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }*/
+
+    private String getTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+    }
+
+    private void initDatePicker()
+    {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
+        {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day)
+            {
+                month = month + 1;
+                String date = makeDateString(day, month, year);
+                dateButton.setText(date);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+
+        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
+        //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+    }
+
+    private String makeDateString(int day, int month, int year)
+    {
+        return month + " " + day + " " + year;
+    }
+
+    public void openDatePicker(View view)
+    {
+        datePickerDialog.show();
+    }
+
 }
