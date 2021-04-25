@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner  spinnerPrice;
     private Button   buttonSearch;
 
+    // Date spiner
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerPrice = (Spinner)findViewById(R.id.spinnerPrice);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
 
+       //initialize Date picker set todays Date
        initDatePicker();
        dateButton = findViewById(R.id.datePickerButton);
        dateButton.setText(getTodaysDate());
@@ -161,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Help function for DatePicker
     private String getTodaysDate()
     {
         Calendar cal = Calendar.getInstance();
@@ -171,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
         return makeDateString(day, month, year);
     }
 
+    //Help function for DatePicker
     private void initDatePicker()
     {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
@@ -189,20 +193,24 @@ public class MainActivity extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        int style = AlertDialog.THEME_HOLO_LIGHT;
+        int style = AlertDialog.THEME_HOLO_DARK;
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
+        //Time limit for datePicker
         //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
     }
 
+    //    Help function for DatePicker
     private String makeDateString(int day, int month, int year)
     {
-        return month + " " + day + " " + year;
+        return day + "-" + month + "-" + year;
     }
 
+    //    Help function for DatePicker
     public void openDatePicker(View view)
     {
+
         datePickerDialog.show();
     }
 
