@@ -146,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
                 int filterTimeId = spinnerTime.getSelectedItemPosition();
                 int filterPriceId = spinnerPrice.getSelectedItemPosition();
 
-
-
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
 
                 intent.putExtra("TITLE", filterTitle);
