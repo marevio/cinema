@@ -52,12 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         textTitle = (EditText)findViewById(R.id.editTextTitle);
         spinnerCategory = (Spinner)findViewById(R.id.spinnerCategory);
-        /*textDate = (EditText)findViewById(R.id.editTextDate);*/
         spinnerTime = (Spinner)findViewById(R.id.spinnerTime);
         spinnerPrice = (Spinner)findViewById(R.id.spinnerPrice);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
 
-       //initialize Date picker set todays Date
+       //initialize Date picker set today's Date
        initDatePicker();
        dateButton = findViewById(R.id.datePickerButton);
        dateButton.setText(getTodaysDate());
@@ -142,10 +141,9 @@ public class MainActivity extends AppCompatActivity {
 
                 String filterTitle = textTitle.getText().toString();
                 int filterCategoryId = spinnerCategory.getSelectedItemPosition();
-                String filterDate = textDate.getText().toString();
+                String filterDate = dateButton.getText().toString();
                 int filterTimeId = spinnerTime.getSelectedItemPosition();
                 int filterPriceId = spinnerPrice.getSelectedItemPosition();
-
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
 
                 intent.putExtra("TITLE", filterTitle);
@@ -153,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("DATE", filterDate);
                 intent.putExtra("TIMEID", filterTimeId);
                 intent.putExtra("PRICEID", filterPriceId);
-
 
                 startActivity(intent);
             }
@@ -193,7 +190,9 @@ public class MainActivity extends AppCompatActivity {
 
         int style = AlertDialog.THEME_HOLO_DARK;
 
+        //getSelectedView()).setTextColor(Color.rgb(191,169,140) );
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
+
         //Time limit for datePicker
         //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
@@ -202,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
     //    Help function for DatePicker
     private String makeDateString(int day, int month, int year)
     {
-        return day + "-" + month + "-" + year;
+        return day + "/" + month + "/" + year;
     }
 
     //    Help function for DatePicker

@@ -82,6 +82,13 @@
                 android:textStyle="bold"
             </TextView>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- Cost Label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +106,6 @@
                 android:textStyle="italic">
                 android:textStyle="bold"
             </TextView>
-
 
         </LinearLayout>
 
@@ -130,5 +136,6 @@
         <!-- Price Label -->
 
     </LinearLayout>
+
 
 </LinearLayout>

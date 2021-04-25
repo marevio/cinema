@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="movies_price">
-        <item><b><font fgcolor='#BFA98C'>(Όλα)</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΦΟΙΤΗΤΙΚΟ/ΣΤΡΑΤΙΩΤΙΚΟ: 5,5€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΠΑΙΔΙΚΕΣ ΑΙΘΟΥΣΕΣ: 7,5€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ 2D: 10€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ 3D: 11€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ DOLBY: 11€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ DOLBY-3D: 12€</font></b></item>
-        <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ GOLD: 20€</font></b></item>
-    </string-array>
+<string-array name="movies_price">
+    <item><b><font fgcolor='#BFA98C'>(Όλα)</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΦΟΙΤΗΤΙΚΟ/ΣΤΡΑΤΙΩΤΙΚΟ: 5,5€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΠΑΙΔΙΚΕΣ ΑΙΘΟΥΣΕΣ: 7,5€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ 2D: 10€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ 3D: 11€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ DOLBY: 11€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ DOLBY-3D: 12€</font></b></item>
+    <item><b><font fgcolor='#BFA98C'>ΑΙΘΟΥΣΕΣ GOLD: 20€</font></b></item>
+</string-array>
 </resources>

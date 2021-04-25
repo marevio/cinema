@@ -2,7 +2,7 @@
 <resources>
         <string-array name="movies_categories">
             <item><b><font fgcolor='#BFA98C'>(Όλα)</font></b></item>
-            <item><b><font fgcolor='#BFA98C' >Δράσης</font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Δράσης</font></b></item>
             <item><b><font fgcolor='#BFA98C'>Επιστημονικής Φαντασίας</font></b></item>
             <item><b><font fgcolor='#BFA98C'>Δραματική</font></b></item>
             <item><b><font fgcolor='#BFA98C'>Ρομαντική</font></b></item>
