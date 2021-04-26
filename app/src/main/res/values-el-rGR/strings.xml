@@ -5,6 +5,6 @@
     <string name="label_category">Κατηγορία Ταινίας</string>
     <string name="label_date">Ημερομηνία Προβολής</string>
     <string name="label_time">Ώρα Προβολής</string>
-    <string name="label_price">Τιμή Εισητηρίου</string>
+    <string name="label_price">Τιμή Εισιτηρίου</string>
     <string name="button_search">Αναζήτηση</string>
 </resources>

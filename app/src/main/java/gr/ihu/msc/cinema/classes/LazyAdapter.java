@@ -50,7 +50,7 @@ public class LazyAdapter extends BaseAdapter {
         TextView date = (TextView)vi.findViewById(R.id.movie_item_date);
         TextView time = (TextView)vi.findViewById(R.id.movie_item_time);
         TextView price = (TextView)vi.findViewById(R.id.movie_item_price);
-        ImageView thumb_image=(ImageView)vi.findViewById(R.id.imageView);
+        ImageView thumb_image=(ImageView)vi.findViewById(R.id.imageViewCover);
 
         HashMap<String, Object> movie = new HashMap<String, Object>();
         movie = data.get(position);

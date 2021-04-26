@@ -54,7 +54,7 @@ public class DataStore {
         DataStore.Movies.clear();
 
         String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
-        //String urlString = String.format("http://informatics.teicm.gr/msc/android/books_sample.json.txt?author=%s&title=%s&genreid=%d", filterAuthor, filterTitle, filterGenreId);
+        //String urlString = String.format("http://informatics.teicm.gr/msc/android/getbooks.php?title=%s&categoryid=%s&date=%s&timeid=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
         //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
         JSONObject json = JsonParser.getJsonObject(contents);

@@ -40,9 +40,7 @@ public class ListActivity extends AppCompatActivity {
         String filterTitle = intent.getStringExtra("TITLE");
         int filterCategoryId = intent.getIntExtra("CATEGORYID", 0);
         String filterDate = intent.getStringExtra("DATE");
-        //String filterTime = intent.getStringExtra("TIME");
         int filterTimeId = intent.getIntExtra("TIMEID", 0);
-        //String filterPrice = intent.getStringExtra("PRICE");
         int filterPriceId = intent.getIntExtra("PRICEID", 0);
         findViews();
 

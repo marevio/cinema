@@ -7,11 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
 
 import gr.ihu.msc.cinema.classes.DataStore;
+import gr.ihu.msc.cinema.classes.ImageLoader;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -22,6 +24,8 @@ public class DetailsActivity extends AppCompatActivity {
     TextView textViewPrice;
     TextView textViewLabelDescription;
     TextView textViewDescription;
+    ImageLoader imageLoader;
+    ImageView imageViewCover;
 
     Button buttonVisitWebsite;
 
@@ -35,6 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
         textViewPrice = (TextView)findViewById(R.id.movie_details_price);
         textViewDescription=(TextView)findViewById(R.id.movie_details_description);
         buttonVisitWebsite = (Button)findViewById(R.id.buttonVisitWebsite);
+        imageViewCover = (ImageView)findViewById(R.id.imageViewCover);
     }
 
     @Override
@@ -56,6 +61,7 @@ public class DetailsActivity extends AppCompatActivity {
             String movieDate = (String)movie.get(DataStore.KEY_DATE);
             String movieTimeName = (String)movie.get(DataStore.KEY_TIMEID);
             String moviePriceName = (String)movie.get(DataStore.KEY_PRICEID);
+            String movieCoverUrl=(String)movie.get(DataStore.KEY_COVERURL);
             String movieDescription=(String)movie.get(DataStore.KEY_DESCRIPTION);
 
 
@@ -65,6 +71,8 @@ public class DetailsActivity extends AppCompatActivity {
             textViewTime.setText(movieTimeName);
             textViewPrice.setText(moviePriceName);
             textViewDescription.setText(movieDescription);
+            imageLoader = new ImageLoader(this);
+            imageLoader.DisplayImage(movieCoverUrl,imageViewCover);
 
 
             buttonVisitWebsite.setOnClickListener(new View.OnClickListener() {

@@ -29,11 +29,11 @@ public class ImageLoader {
     ExecutorService executorService;
     Activity activity;
 
+    //fileCache.clear();
+
     public ImageLoader(Context context){
         fileCache=new FileCache(context);
         activity = (Activity)context;
-
-        fileCache.clear();
 
         executorService = Executors.newFixedThreadPool(1);
     }

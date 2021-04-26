@@ -1,9 +1,15 @@
 package gr.ihu.msc.cinema;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.widget.DatePicker;
 import android.widget.Button;
 import android.content.Intent;
@@ -28,6 +34,13 @@ import gr.ihu.msc.cinema.classes.DataStore;
 import static java.lang.String.format;
 
 public class MainActivity extends AppCompatActivity {
+//init for permissions
+    private static final int MY_PERMISSIONS_REQUEST_CODE = 1001;
+    public static String[] RequiredPermissions = {
+            Manifest.permission.INTERNET,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+    };
+
     private EditText textTitle;
     private Spinner  spinnerCategory;
     private EditText textDate;
@@ -156,6 +169,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+         // executes the new permissions mechanism(from android M and later)
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+           if (!checkPermissions()){
+               requestPermissions(RequiredPermissions, MY_PERMISSIONS_REQUEST_CODE);
+           }
+       }
+
     }
 
     // Help function for DatePicker
@@ -210,5 +230,42 @@ public class MainActivity extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+
+    //check for permissions from array true if all permissions false if only one not give permission
+    @RequiresApi(Build.VERSION_CODES.M)
+    public boolean checkPermissions(){
+        for (String permission : RequiredPermissions){
+            if (ActivityCompat.checkSelfPermission(this, permission) !=
+                    PackageManager.PERMISSION_GRANTED){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[]
+            permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_CODE: {
+                // If request is cancelled, the result arrays are empty.
+                boolean permissionGranted = false;
+                if (grantResults.length > 0){
+                    permissionGranted = true;
+                    for (int grantResult : grantResults) {
+                        if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                            permissionGranted = false;
+                            break;
+                        }
+                    }
+                }
+                if (permissionGranted){
+                    //possibly show a message to the user
+                }
+            }
+            break;
+        }
+    }
+
+
 
 }

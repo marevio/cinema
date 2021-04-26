@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class NetworkUtils {
 
@@ -47,4 +48,15 @@ public class NetworkUtils {
         // return Contents
         return contents;
     }
+
+    public static String UrlEncode(String source){
+        String encoded = null;
+        try {
+            encoded = URLEncoder.encode(source, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return encoded;
+    }
+
 }
