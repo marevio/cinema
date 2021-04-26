@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        int style = AlertDialog.THEME_HOLO_DARK;
+        int style = AlertDialog.THEME_HOLO_DARK ;
 
         //getSelectedView()).setTextColor(Color.rgb(191,169,140) );
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);

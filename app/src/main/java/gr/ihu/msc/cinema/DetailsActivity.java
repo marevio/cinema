@@ -20,6 +20,9 @@ public class DetailsActivity extends AppCompatActivity {
     TextView textViewDate;
     TextView textViewTime;
     TextView textViewPrice;
+    TextView textViewLabelDescription;
+    TextView textViewDescription;
+
     Button buttonVisitWebsite;
 
     HashMap<String, Object> movie = null;
@@ -30,6 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
         textViewDate = (TextView)findViewById(R.id.movie_details_date);
         textViewTime = (TextView)findViewById(R.id.movie_details_time);
         textViewPrice = (TextView)findViewById(R.id.movie_details_price);
+        textViewDescription=(TextView)findViewById(R.id.movie_details_description);
         buttonVisitWebsite = (Button)findViewById(R.id.buttonVisitWebsite);
     }
 
@@ -48,16 +52,20 @@ public class DetailsActivity extends AppCompatActivity {
 
             movie = DataStore.Movies.get(moviePosition);
             String movieTitle = (String)movie.get(DataStore.KEY_TITLE);
-            String movieCategoryName = (String)movie.get(DataStore.KEY_CATEGORYNAME);
+            String movieCategoryName = (String)movie.get(DataStore.KEY_CATEGORYID);
             String movieDate = (String)movie.get(DataStore.KEY_DATE);
-            String movieTimeName = (String)movie.get(DataStore.KEY_TIMENAME);
-            String moviePriceName = (String)movie.get(DataStore.KEY_PRICENAME);
+            String movieTimeName = (String)movie.get(DataStore.KEY_TIMEID);
+            String moviePriceName = (String)movie.get(DataStore.KEY_PRICEID);
+            String movieDescription=(String)movie.get(DataStore.KEY_DESCRIPTION);
+
 
             textViewTitle.setText(movieTitle);
             textViewCategory.setText(movieCategoryName);
             textViewDate.setText(movieDate);
             textViewTime.setText(movieTimeName);
             textViewPrice.setText(moviePriceName);
+            textViewDescription.setText(movieDescription);
+
 
             buttonVisitWebsite.setOnClickListener(new View.OnClickListener() {
                 @Override

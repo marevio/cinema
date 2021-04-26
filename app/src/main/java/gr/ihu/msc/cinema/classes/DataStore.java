@@ -2,6 +2,7 @@ package gr.ihu.msc.cinema.classes;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.provider.CalendarContract;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +31,7 @@ public class DataStore {
     public static String KEY_TIMENAME = "TIMENAME";
     public static String KEY_PRICEID = "PRICEID";
     public static String KEY_PRICENAME = "PRICENAME";
+    public static String KEY_DESCRIPTION= "DESCRIPTION";
 
 
     public static Context AppContext = null;
@@ -79,6 +81,7 @@ public class DataStore {
             String movieDate = jCurMovie.optString(DataStore.KEY_DATE);
             int movieTimeId = jCurMovie.optInt(DataStore.KEY_TIMEID,0);
             int moviePriceId = jCurMovie.optInt(DataStore.KEY_PRICEID,0);
+            String movieDescription = jCurMovie.optString(DataStore.KEY_DESCRIPTION);
 
 
 
@@ -102,6 +105,7 @@ public class DataStore {
             movie.put(DataStore.KEY_DATE, movieDate);
             movie.put(DataStore.KEY_TIMEID, movieTimeName);
             movie.put(DataStore.KEY_PRICEID, moviePriceName);
+            movie.put(DataStore.KEY_DESCRIPTION,movieDescription);
 
 
 

@@ -71,7 +71,7 @@
             android:isScrollContainer="true"
             android:keepScreenOn="false"
             android:persistentDrawingCache="all|scrolling|none|animation"
-            android:popupBackground="#7C0202"
+            android:popupBackground="@android:drawable/dialog_holo_dark_frame"
             android:scrollbarSize="14dp"
             android:visibility="visible" />
 
@@ -90,19 +90,22 @@
 
         <Button
             android:id="@+id/datePickerButton"
+            style="?android:spinnerStyle"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
+            android:duplicateParentState="true"
+            android:onClick="openDatePicker"
             android:text="01/01/2020"
             android:textColor="#BFA98C"
+            android:textColorHint="@color/white"
             android:textSize="18sp"
-            style="?android:spinnerStyle"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTime"
-            android:layout_marginTop="10dp"
-            android:onClick="openDatePicker"/>
+            app:rippleColor="@color/white" />
 
         <TextView
             android:id="@+id/textViewTime"
@@ -130,7 +133,7 @@
             android:isScrollContainer="true"
             android:keepScreenOn="false"
             android:persistentDrawingCache="all|scrolling|none|animation"
-            android:popupBackground="#7C0202"
+            android:popupBackground="@android:drawable/dialog_holo_dark_frame"
             android:scrollbarSize="14dp"
             android:visibility="visible" />
 
@@ -160,7 +163,7 @@
             android:isScrollContainer="true"
             android:keepScreenOn="false"
             android:persistentDrawingCache="all|scrolling|none|animation"
-            android:popupBackground="#7C0202"
+            android:popupBackground="@android:drawable/dialog_holo_dark_frame"
             android:scrollbarSize="14dp"
             android:visibility="visible" />
         <Button
