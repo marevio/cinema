@@ -89,6 +89,13 @@
                     android:textColor="@color/teal_700"
                     android:textStyle="italic"></TextView>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,6 +114,9 @@
 
 
             </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,20 +146,10 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonVisitWebsite"
-        android:layout_width="393dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="4dp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:text="Visit Website" />
-
     <TextView
         android:id="@+id/movie_details_description"
         android:layout_width="395dp"
-        android:layout_height="428dp"
+        android:layout_height="305dp"
         android:layout_above="@+id/buttonVisitWebsite"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -176,4 +176,17 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonVisitWebsite"
+        android:layout_width="393dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Visit Website" />
+
+
 </RelativeLayout>
+
