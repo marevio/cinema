@@ -6,4 +6,6 @@
     <string name="label_time">Movie Time</string>
     <string name="label_price">Ticket Price</string>
     <string name="button_search">Search</string>
+    <string name="label_description">Description</string>
+    <string name="website">Visit Website</string>
 </resources>

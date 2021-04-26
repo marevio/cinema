@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Σινεμά</string>
-    <string name="label_title">Τίτλος Ταινίας</string>
-    <string name="label_category">Κατηγορία Ταινίας</string>
-    <string name="label_date">Ημερομηνία Προβολής</string>
+    <string name="app_name">Σινεμά </string>
+    <string name="label_title">Τίτλος </string>
+    <string name="label_category">Κατηγορία </string>
+    <string name="label_date">Ημερ. Προβολής</string>
     <string name="label_time">Ώρα Προβολής</string>
     <string name="label_price">Τιμή Εισιτηρίου</string>
     <string name="button_search">Αναζήτηση</string>
+    <string name="label_description">Περιγραφή</string>
+    <string name="website">Ιστότοπος</string>
 </resources>

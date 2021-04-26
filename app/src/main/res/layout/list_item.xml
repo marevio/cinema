@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageViewCover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
         android:src="@mipmap/ic_launcher" />
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Category: "
+                android:text="@string/label_category"
                 android:textColor="@color/white"
                 android:textStyle="bold"></TextView>
             <!-- Price Label -->
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Date: "
+                android:text="@string/label_date"
                 android:textColor="@color/white"
                 android:textStyle="bold"></TextView>
             <!-- Price Label -->
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Time: "
+                android:text="@string/label_time"
                 android:textColor="@color/white"
                 android:textStyle="bold"></TextView>
             <!-- Price Label -->
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Price: "
+                android:text="@string/label_price"
                 android:textColor="@color/white"
                 android:textStyle="bold"></TextView>
 
