@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
         <string-array name="movies_categories">
-            <item><b><font fgcolor='#BFA98C'>(Όλα)</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Δράσης</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Επιστημονικής Φαντασίας</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Δραματική</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Ρομαντική</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Ιστορική</font></b></item>
-            <item><b><font fgcolor='#BFA98C'>Βιογραφική</font></b></item>
+            <item><b><font fgcolor='#BFA98C'>(Όλα) </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Δράσης </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Επιστημονικής Φαντασίας </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Δραματική </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Ρομαντική </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Ιστορική </font></b></item>
+            <item><b><font fgcolor='#BFA98C'>Βιογραφική </font></b></item>
         </string-array>
     </resources>
