@@ -1,16 +1,26 @@
 package gr.ihu.msc.cinema;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import gr.ihu.msc.cinema.classes.DataStore;
 import gr.ihu.msc.cinema.classes.ImageLoader;
@@ -26,6 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
     TextView textViewDescription;
     ImageLoader imageLoader;
     ImageView imageViewCover;
+    WebView webView;
 
     Button buttonVisitWebsite;
 
@@ -40,8 +51,10 @@ public class DetailsActivity extends AppCompatActivity {
         textViewDescription=(TextView)findViewById(R.id.movie_details_description);
         buttonVisitWebsite = (Button)findViewById(R.id.buttonVisitWebsite);
         imageViewCover = (ImageView)findViewById(R.id.imageViewCover);
+        webView = (WebView)findViewById(R.id.webview_player_view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +64,22 @@ public class DetailsActivity extends AppCompatActivity {
             overridePendingTransition(R.anim.pull_in_from_right, R.anim.hold);
 
             findViews();
+
+        //Check if it's a Phone or Tablet
+        /*TelephonyManager manager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        if(manager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE){
+            //return "Tablet";
+            webView.getSettings().getJavaScriptEnabled();
+            webView.loadUrl("https://www.youtube.com/embed/YE7VzlLtp-4");
+        }else{
+            //return "Mobile";
+        }*/
+
+
+            //webview youtube trailer
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.loadUrl("https://www.youtube.com/embed/YE7VzlLtp-4");
 
             Intent intent = getIntent();
             int moviePosition = intent.getIntExtra(DataStore.KEY_POSITION, 0);
