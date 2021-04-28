@@ -145,6 +145,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:text="@string/label_price"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/white"
                     android:textStyle="bold"></TextView>
 
@@ -192,6 +193,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/backgroud_cinema"
+            android:textAlignment="center"
             android:textColor="@color/teal_700"
             android:textStyle="italic" />
     </LinearLayout>
