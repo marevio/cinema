@@ -8,5 +8,5 @@
     <string name="label_price">Τιμή Εισιτηρίου </string>
     <string name="button_search">Αναζήτηση </string>
     <string name="label_description">Περιγραφή </string>
-    <string name="website">Ιστότοπος </string>
+    <string name="website">IMDB Ιστότοπος </string>
 </resources>

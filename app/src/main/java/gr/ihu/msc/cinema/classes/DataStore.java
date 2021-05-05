@@ -32,6 +32,7 @@ public class DataStore {
     public static String KEY_PRICEID = "PRICEID";
     public static String KEY_PRICENAME = "PRICENAME";
     public static String KEY_DESCRIPTION= "DESCRIPTION";
+    public static String KEY_TRAILER= "TRAILER";
 
 
     public static Context AppContext = null;
@@ -82,7 +83,7 @@ public class DataStore {
             int movieTimeId = jCurMovie.optInt(DataStore.KEY_TIMEID,0);
             int moviePriceId = jCurMovie.optInt(DataStore.KEY_PRICEID,0);
             String movieDescription = jCurMovie.optString(DataStore.KEY_DESCRIPTION);
-
+            String movieTrailer = jCurMovie.optString(DataStore.KEY_TRAILER);
 
 
 
@@ -106,6 +107,7 @@ public class DataStore {
             movie.put(DataStore.KEY_TIMEID, movieTimeName);
             movie.put(DataStore.KEY_PRICEID, moviePriceName);
             movie.put(DataStore.KEY_DESCRIPTION,movieDescription);
+            movie.put(DataStore.KEY_TRAILER,movieTrailer);
 
 
 

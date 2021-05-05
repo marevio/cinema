@@ -76,10 +76,7 @@ public class DetailsActivity extends AppCompatActivity {
         }*/
 
 
-            //webview youtube trailer
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.loadUrl("https://www.youtube.com/embed/YE7VzlLtp-4");
+
 
             Intent intent = getIntent();
             int moviePosition = intent.getIntExtra(DataStore.KEY_POSITION, 0);
@@ -92,7 +89,12 @@ public class DetailsActivity extends AppCompatActivity {
             String moviePriceName = (String)movie.get(DataStore.KEY_PRICEID);
             String movieCoverUrl=(String)movie.get(DataStore.KEY_COVERURL);
             String movieDescription=(String)movie.get(DataStore.KEY_DESCRIPTION);
+            String movieTrailer=(String)movie.get(DataStore.KEY_TRAILER);
 
+        //webview youtube trailer
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.loadUrl(movieTrailer);
 
             textViewTitle.setText(movieTitle);
             textViewCategory.setText(movieCategoryName);
