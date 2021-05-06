@@ -210,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
 
         int style = AlertDialog.THEME_HOLO_DARK ;
 
-        //getSelectedView()).setTextColor(Color.rgb(191,169,140) );
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
 
         //Time limit for datePicker

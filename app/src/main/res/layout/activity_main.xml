@@ -70,7 +70,7 @@
             android:isScrollContainer="true"
             android:keepScreenOn="false"
             android:persistentDrawingCache="all|scrolling|none|animation"
-            android:popupBackground="#7C0202"
+            android:popupBackground="@android:drawable/dialog_holo_dark_frame"
             android:scrollbarSize="14dp"
             android:visibility="visible" />
 
