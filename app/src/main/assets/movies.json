@@ -1,5 +1,35 @@
 [
   {
+    "id": 4,
+    "title": "Coyote Ugly",
+    "director": "David McNally",
+    "actor": "Piper Perabo",
+    "categoryId": 4,
+    "imbdUrl": "https://www.imdb.com/title/tt0200550/?ref_=ttls_li_tt",
+    "coverUrl": "https://m.media-amazon.com/images/M/MV5BZWZhZmFkMjQtMWYyMC00NmQ3LTk5M2MtZDU3ZjNjYmM0ZTYxXkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "viewDate": "2021-05-05",
+    "timeId": 5,
+    "priceId": 4,
+    "trailer": "https://www.youtube.com/embed/j7mHuzojVW0",
+    "description": "When young Violet finally follows her dream and moves to New York to become a songwriter, she knows little about the big city. All her efforts to get a demo tape to a producer are useless, additionally her apartment is broken in to, leaving her with nothing. But a coincidence leads her to Coyote Ugly, a night club where only beautiful women call the shots, using their female attraction to drive the guests just crazy. Violet manages to get a position and starts learning the ways of the city. After getting in trouble because of a misunderstanding, Violet's new friend Kevin tries to rid her of her stage fear so that she can perform her songs herself. Violet's father Bill does not like her new job as well as her leaving him, but it's all part of growing up.",
+    "owner": 1
+  },
+  {
+    "id": 5,
+    "title": "Marriage Story",
+    "director": "Noah Baumbach",
+    "actor": "Scarlett Johansson",
+    "categoryId": 5,
+    "imbdUrl": "https://www.imdb.com/title/tt7653254/",
+    "coverUrl": "https://m.media-amazon.com/images/M/MV5BZGVmY2RjNDgtMTc3Yy00YmY0LTgwODItYzBjNWJhNTRlYjdkXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "viewDate": "2021-04-04",
+    "timeId": 4,
+    "priceId": 3,
+    "trailer": "https://www.youtube.com/embed/BHi-a1n8t7M",
+    "description": "Sadly, after numerous disastrous sessions of marital mediation, New York City's brilliant theatre director, Charlie, and the one-time Los Angeles movie actress, Nicole, decided to split up, putting an end to their decade-long marriage. However, divorce is horrible--and as the once-close-knit couple struggles to make it work for the sake of their eight-year-old son, Henry--vitriolic accusations and bitter resentment threaten the very foundation of Charlie and Nicole's so-called amicable separation. Now, shrewd and absurdly costly lawyers take over, and things are bound to get messy. But, why are love's wounds so deep, and cruelly painful? In the end, is love always forever?",
+    "owner": 1
+  },
+  {
     "id": 1,
     "title": "Tenet",
     "director": "Christopher Nolan",
@@ -12,6 +42,36 @@
     "priceId": 5,
     "trailer": "https://www.youtube.com/embed/AZGcmvrTX9M",
     "description": "After having a near-death experience, an unnamed CIA operative, known as the Protagonist, is selected to join the ranks of the shadowy government organization called Tenet: a group tasked with ensuring the survival of the human race. Entrusted with coming to grips with a terrifying, cutting-edge technology, and an imminent attack from the future, the Protagonist teams up with his cryptic new partner, Neil, following a faint trail of clues that lead to the villainous Russian oligarch, Sator. However, this is a race against time, and as the suffocating stranglehold of the invisible threat tightens, more and more, the future of our world is hanging by a thread. Can two agents working alone avert the impending Armageddon?",
+    "owner": 1
+  },
+  {
+    "id": 3,
+    "title": "The Chef",
+    "director": "Daniel Cohen",
+    "actor": "Jean Reno",
+    "categoryId": 3,
+    "imbdUrl": "https://www.imdb.com/title/tt1911553/?ref_=ttls_li_tt",
+    "coverUrl": "https://m.media-amazon.com/images/M/MV5BOTZmMWYwMWQtNjk0Ny00ZTI4LTkxODAtZTA4OTE2NjhlNmRmXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_UY268_CR2,0,182,268_AL_.jpg",
+    "viewDate": "2021-05-05",
+    "timeId": 2,
+    "priceId": 3,
+    "trailer": "https://www.youtube.com/embed/FF_rYNupPwg",
+    "description": "Jacky Bonnot is 32 years old and a lover of haute cuisine. He is undeniably talented and he dreams of success managing a great restaurant, but he and his wife's financial situation obliges him to accept odd jobs that he is not passionate about and thus, never able to keep. One day he runs into his idol, Alexandre Lagarde, a famous multi-star chef whose comfortable situation is threatened by the holding group that owns his restaurants.",
+    "owner": 1
+  },
+  {
+    "id": 6,
+    "title": "The Crown",
+    "director": "Peter Morgan",
+    "actor": "Claire Foy",
+    "categoryId": 6,
+    "imbdUrl": "https://www.imdb.com/title/tt4786824/?ref_=adv_li_i",
+    "coverUrl": "https://m.media-amazon.com/images/M/MV5BZmY0MzBlNjctNTRmNy00Njk3LWFjMzctMWQwZDAwMGJmY2MyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "viewDate": "2021-01-01",
+    "timeId": 3,
+    "priceId": 1,
+    "trailer": "https://www.youtube.com/embed/JWtnJjn6ng0",
+    "description": "This show focuses on Queen Elizabeth II as a young newlywed faced with leading the world's most famous monarchy, while forging a relationship with legendary Prime Minister Sir Winston Churchill. The British Empire is in decline, the political world is in disarray, but a new era is dawning. Peter Morgan's masterfully researched scripts reveal the Queen's private journey behind the public façade with daring frankness. Prepare to see into the coveted world of power and privilege behind the locked doors of Westminster and Buckingham Palace.",
     "owner": 1
   },
   {
