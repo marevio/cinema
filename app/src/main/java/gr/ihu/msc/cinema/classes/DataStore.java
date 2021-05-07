@@ -55,25 +55,29 @@ public class DataStore {
     public static void LoadMovies(String filterTitle, int filterCategoryId, String filterDate, int filterTimeId, int filterPriceId) {
         DataStore.Movies.clear();
 
-        String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
+        //Local File
+        //String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
 
-        //String urlString = String.format("http://127.0.0.1:8000/movies?title=%s&categoryId=%s&viewDate=%s&timeId=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
-        //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
+        //Προβλημα με τον κώδικα από το τοπικό αρχειο τρέχει
+        //?title=%s&categoryId=%s&viewDate=%s&timeId=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId
+        String urlString = String.format("http://127.0.0.1:8000/movies/?format=json");
+        String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
         //String urlString = String.format("http://informatics.teicm.gr/msc/android/getbooks.php?title=%s&categoryid=%s&date=%s&timeid=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
         //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
-        JSONObject json = JsonParser.getJsonObject(contents);
-        JSONArray jMovies = null;
+        //Old
+        //JSONObject json = JsonParser.getJsonObject(contents);
+        //JSONArray jMovies = null;
 
         //fix
-        //JSONArray jMovies = JsonParser.getJsonArray(contents);
+        JSONArray jMovies = JsonParser.getJsonArray(contents);
 
-        try {
-            jMovies = json.getJSONArray("movies");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            jMovies = json.getJSONArray("movies");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
         if (jMovies == null) return;
         int nMovies = jMovies.length();
@@ -125,5 +129,3 @@ public class DataStore {
     }
 
 }
-
-

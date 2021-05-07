@@ -2,6 +2,7 @@ package gr.ihu.msc.cinema.classes;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,8 +21,7 @@ public class JsonParser {
         return jObj;
     }
 
-//fix
-   /* public static JSONArray getJsonArray(String jsonString){
+    public static JSONArray getJsonArray(String jsonString) {
         JSONArray jArr = null;
         // try parse the string to a JSON Array
         try {
@@ -31,5 +31,6 @@ public class JsonParser {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
         return jArr;
-    }*/
+
+    }
 }

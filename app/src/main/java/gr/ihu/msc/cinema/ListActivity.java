@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+
 import gr.ihu.msc.cinema.classes.DataStore;
 import gr.ihu.msc.cinema.classes.LazyAdapter;
 
@@ -50,6 +52,7 @@ public class ListActivity extends AppCompatActivity {
 
         //show all genres on our list
         DataStore.LoadMovies(filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
+
 
 
       /*  ArrayAdapter<CharSequence> categoriesAdapter = ArrayAdapter.createFromResource(
