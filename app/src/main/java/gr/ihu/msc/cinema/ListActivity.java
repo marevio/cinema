@@ -13,11 +13,11 @@ import gr.ihu.msc.cinema.classes.DataStore;
 import gr.ihu.msc.cinema.classes.LazyAdapter;
 
 public class ListActivity extends AppCompatActivity {
-    TextView textViewInfo;
+    //TextView textViewInfo;
     ListView listViewMovies;
 
     private void findViews() {
-        textViewInfo = (TextView)findViewById(R.id.textViewInfo);
+        //textViewInfo = (TextView)findViewById(R.id.textViewInfo);
         listViewMovies = (ListView)findViewById(R.id.listViewMovies);
     }
 
@@ -45,8 +45,9 @@ public class ListActivity extends AppCompatActivity {
         findViews();
 
         //show user filters for information
-        String message = String.format("Title: %s\nCategory: %d\nDate: %s\nTime: %d\nPrice: %d", filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
-        textViewInfo.setText(message);
+        //String message = String.format("Title: %s\nCategory: %d\nDate: %s\nTime: %d\nPrice: %d", filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
+        //textViewInfo.setText(message);
+
         //show all genres on our list
         DataStore.LoadMovies(filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
 

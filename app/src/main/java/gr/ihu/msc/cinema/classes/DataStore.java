@@ -18,21 +18,22 @@ public class DataStore {
 
     public static String KEY_POSITION = "POSITION";
 
-    public static String KEY_ID = "ID";
-    public static String KEY_TITLE = "TITLE";
-    public static String KEY_DIRECTOR = "DIRECTOR";
-    public static String KEY_ACTOR = "ACTOR";
-    public static String KEY_CATEGORYID = "CATEGORYID";
+    public static String KEY_ID = "id";
+    public static String KEY_TITLE = "title";
+    public static String KEY_DIRECTOR = "director";
+    public static String KEY_ACTOR = "actor";
+    public static String KEY_CATEGORYID = "categoryId";
     public static String KEY_CATEGORYNAME = "CATEGORYNAME";
-    public static String KEY_IMBDURL = "IMBDURL";
-    public static String KEY_COVERURL = "COVERURL";
-    public static String KEY_DATE = "DATE";
-    public static String KEY_TIMEID = "TIMEID";
+    public static String KEY_IMBDURL = "imbdUrl";
+    public static String KEY_COVERURL = "coverUrl";
+    public static String KEY_DATE = "viewDate";
+    public static String KEY_TIMEID = "timeId";
     public static String KEY_TIMENAME = "TIMENAME";
-    public static String KEY_PRICEID = "PRICEID";
+    public static String KEY_PRICEID = "priceId";
     public static String KEY_PRICENAME = "PRICENAME";
-    public static String KEY_DESCRIPTION= "DESCRIPTION";
-    public static String KEY_TRAILER= "TRAILER";
+    public static String KEY_DESCRIPTION= "description";
+    public static String KEY_TRAILER= "trailer";
+    public static String KEY_OWNER= "owner";
 
 
     public static Context AppContext = null;
@@ -55,11 +56,19 @@ public class DataStore {
         DataStore.Movies.clear();
 
         String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
+
+        //String urlString = String.format("http://127.0.0.1:8000/movies?title=%s&categoryId=%s&viewDate=%s&timeId=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
+        //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
+
         //String urlString = String.format("http://informatics.teicm.gr/msc/android/getbooks.php?title=%s&categoryid=%s&date=%s&timeid=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
         //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
         JSONObject json = JsonParser.getJsonObject(contents);
         JSONArray jMovies = null;
+
+        //fix
+        //JSONArray jMovies = JsonParser.getJsonArray(contents);
+
         try {
             jMovies = json.getJSONArray("movies");
         } catch (JSONException e) {
@@ -84,7 +93,7 @@ public class DataStore {
             int moviePriceId = jCurMovie.optInt(DataStore.KEY_PRICEID,0);
             String movieDescription = jCurMovie.optString(DataStore.KEY_DESCRIPTION);
             String movieTrailer = jCurMovie.optString(DataStore.KEY_TRAILER);
-
+            String movieOwner = jCurMovie.optString(DataStore.KEY_OWNER);
 
 
             //get Category name by ID
@@ -108,7 +117,7 @@ public class DataStore {
             movie.put(DataStore.KEY_PRICEID, moviePriceName);
             movie.put(DataStore.KEY_DESCRIPTION,movieDescription);
             movie.put(DataStore.KEY_TRAILER,movieTrailer);
-
+            movie.put(DataStore.KEY_OWNER,movieOwner);
 
 
             DataStore.Movies.add(movie);

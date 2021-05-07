@@ -20,4 +20,16 @@ public class JsonParser {
         return jObj;
     }
 
+//fix
+   /* public static JSONArray getJsonArray(String jsonString){
+        JSONArray jArr = null;
+        // try parse the string to a JSON Array
+        try {
+            jArr = new JSONArray(jsonString);
+        } catch (JSONException e) {
+            jArr = null;
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+        return jArr;
+    }*/
 }
