@@ -59,12 +59,9 @@ public class DataStore {
         //String contents = AssetsUtils.getFileContentsFromAssets(AppContext, "movies.json");
 
         //Προβλημα με τον κώδικα από το τοπικό αρχειο τρέχει
-        //?title=%s&categoryId=%s&viewDate=%s&timeId=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId
-        String urlString = String.format("http://127.0.0.1:8000/movies/?format=json");
+        //&title=%s&categoryId=%s&viewDate=%s&timeId=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId
+        String urlString = String.format("http://nickpsaris.pythonanywhere.com/movies/?format=json");
         String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
-
-        //String urlString = String.format("http://informatics.teicm.gr/msc/android/getbooks.php?title=%s&categoryid=%s&date=%s&timeid=%s&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId);
-        //String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
 
         //Old
         //JSONObject json = JsonParser.getJsonObject(contents);
