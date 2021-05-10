@@ -71,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
        //initialize Date picker set today's Date
        initDatePicker();
+
        dateButton = findViewById(R.id.datePickerButton);
-       dateButton.setText(getTodaysDate());
+       //dateButton.setText(getTodaysDate());
         
        DataStore.Init(getApplicationContext());
 
