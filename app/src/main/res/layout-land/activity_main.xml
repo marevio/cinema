@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/textViewTitleLabel"
-        android:layout_width="155dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewCinema"
         android:layout_marginStart="16dp"
@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/editTextTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_below="@+id/textViewTitleLabel"
         android:layout_marginStart="16dp"
@@ -44,10 +44,10 @@
 
     <TextView
         android:id="@+id/textViewCategory"
-        android:layout_width="139dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewCinema"
-        android:layout_marginStart="123dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/textViewTitleLabel"
@@ -58,7 +58,7 @@
 
     <Spinner
         android:id="@+id/spinnerCategory"
-        android:layout_width="259dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_below="@+id/textViewCategory"
         android:layout_marginStart="50dp"
@@ -78,7 +78,7 @@
 
     <TextView
         android:id="@+id/textViewDate"
-        android:layout_width="240dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinnerCategory"
         android:layout_marginStart="16dp"
@@ -107,7 +107,7 @@
 
     <TextView
         android:id="@+id/textViewTime"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinnerCategory"
         android:layout_marginStart="50dp"
@@ -121,7 +121,7 @@
 
     <Spinner
         android:id="@+id/spinnerTime"
-        android:layout_width="221dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewTime"
         android:layout_marginStart="50dp"
@@ -141,7 +141,7 @@
 
     <TextView
         android:id="@+id/textViewPrice"
-        android:layout_width="248dp"
+        android:layout_width="250dp"
         android:layout_height="37dp"
         android:layout_below="@+id/datePickerButton"
         android:layout_marginStart="16dp"
@@ -154,10 +154,10 @@
 
     <Spinner
         android:id="@+id/spinnerPrice"
-        android:layout_width="308dp"
-        android:layout_height="37dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/datePickerButton"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/textViewPrice"

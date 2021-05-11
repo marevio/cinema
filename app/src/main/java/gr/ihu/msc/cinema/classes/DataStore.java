@@ -60,8 +60,43 @@ public class DataStore {
 
         //Προβλημα με τον κώδικα από το τοπικό αρχειο τρέχει
         //?title=%s&categoryId=%d&viewDate=%d&timeId=%d&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId
-        String urlString = String.format("https://nickpsaris.pythonanywhere.com/movies?title=%s", filterTitle);
+        // String urlString = String.format("https://nickpsaris.pythonanywhere.com/movies/?title=%s&categoryId=%d&viewDate=%s&timeId=%d&priceId=%d", filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
+
+    //parameters to read from filters if one or the rest of the filters is null
+        String urlString = "https://nickpsaris.pythonanywhere.com/movies/";
+        String filters = "";
+
+        if (!filterTitle.isEmpty()) {
+            filters += String.format("&title=%s", filterTitle);
+        }
+
+        if (filterCategoryId > 0) {
+            filters += String.format("&categoryId=%d", filterCategoryId);
+        }
+
+        if (!filterDate.isEmpty()) {
+            filters += String.format("&viewDate=%s", filterDate);
+        }
+
+        if (filterTimeId > 0) {
+            filters += String.format("&timeId=%d", filterTimeId);
+        }
+
+        if (filterPriceId > 0) {
+            filters += String.format("&priceId=%d", filterPriceId);
+        }
+
+        if (!filters.isEmpty()) {
+            char[] filterChars = filters.toCharArray();
+            filterChars[0] = '?';
+            filters = String.valueOf(filterChars);
+
+            urlString = urlString + filters;
+        }
+
+
         String contents = NetworkUtils.getFileContentsFromFromUrl(urlString);
+
 
         //Old
         //JSONObject json = JsonParser.getJsonObject(contents);

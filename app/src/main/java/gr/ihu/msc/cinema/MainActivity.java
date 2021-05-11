@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);*/
 
+    private String formatedDate = "";
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra("TITLE", filterTitle);
                 intent.putExtra("CATEGORYID", filterCategoryId);
-                intent.putExtra("DATE", filterDate);
+                intent.putExtra("DATE", formatedDate);
                 intent.putExtra("TIMEID", filterTimeId);
                 intent.putExtra("PRICEID", filterPriceId);
 
@@ -221,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
     //    Help function for DatePicker
     private String makeDateString(int day, int month, int year)
     {
+        this.formatedDate = String.format("%04d-%02d-%02d", year, month, day);
         return day + "/" + month + "/" + year;
     }
 
