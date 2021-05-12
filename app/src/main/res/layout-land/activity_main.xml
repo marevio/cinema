@@ -1,187 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#7C0202"
+    android:layout_height="wrap_content"
     android:isScrollContainer="true">
 
-
-    <ImageView
-        android:id="@+id/imageViewCinema"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="79dp"
-        android:adjustViewBounds="false"
-        android:foreground="@drawable/cinema_01_920x518" />
+        android:layout_height="match_parent"
+        android:background="#7C0202"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewTitleLabel"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewCinema"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/label_title"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageViewCinema"
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:adjustViewBounds="false"
+            android:foreground="@drawable/cinema_01_920x518" />
 
-    <EditText
-        android:id="@+id/editTextTitle"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/textViewTitleLabel"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#BFA98C"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textViewCategory"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewCinema"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/textViewTitleLabel"
-        android:text="@string/label_category"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewTitleLabel"
+                android:layout_width="248dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imageViewCinema"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_title"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/textViewCategory"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/editTextTitle"
-        android:clickable="true"
-        android:dropDownWidth="match_parent"
-        android:focusableInTouchMode="true"
-        android:hapticFeedbackEnabled="false"
-        android:isScrollContainer="true"
-        android:keepScreenOn="false"
-        android:persistentDrawingCache="all|scrolling|none|animation"
-        android:popupBackground="@android:drawable/dialog_holo_dark_frame"
-        android:scrollbarSize="14dp"
-        android:visibility="visible" />
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:inputType="textPersonName"
+                android:textColor="#BFA98C"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewDate"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerCategory"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/label_date"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/datePickerButton"
-        style="?android:spinnerStyle"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/textViewDate"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="openDatePicker"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+            <TextView
+                android:id="@+id/textViewCategory"
+                android:layout_width="248dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_category"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewTime"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerCategory"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/textViewDate"
-        android:text="@string/label_time"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:focusableInTouchMode="true"
+                android:hapticFeedbackEnabled="false"
+                android:isScrollContainer="true"
+                android:keepScreenOn="false"
+                android:persistentDrawingCache="all|scrolling|none|animation"
+                android:popupBackground="@android:drawable/dialog_holo_dark_frame"
+                android:scrollbarSize="14dp"
+                android:visibility="visible" />
+        </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spinnerTime"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewTime"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/datePickerButton"
-        android:clickable="true"
-        android:dropDownWidth="match_parent"
-        android:focusableInTouchMode="true"
-        android:hapticFeedbackEnabled="false"
-        android:isScrollContainer="true"
-        android:keepScreenOn="false"
-        android:persistentDrawingCache="all|scrolling|none|animation"
-        android:popupBackground="@android:drawable/dialog_holo_dark_frame"
-        android:scrollbarSize="14dp"
-        android:visibility="visible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textViewPrice"
-        android:layout_width="250dp"
-        android:layout_height="37dp"
-        android:layout_below="@+id/datePickerButton"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/label_price"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="248dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_date"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinnerPrice"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/datePickerButton"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/textViewPrice"
-        android:clickable="true"
-        android:dropDownWidth="match_parent"
-        android:focusableInTouchMode="true"
-        android:hapticFeedbackEnabled="false"
-        android:isScrollContainer="true"
-        android:keepScreenOn="false"
-        android:persistentDrawingCache="all|scrolling|none|animation"
-        android:popupBackground="@android:drawable/dialog_holo_dark_frame"
-        android:scrollbarSize="14dp"
-        android:visibility="visible" />
+            <Button
+                android:id="@+id/datePickerButton"
+                style="?android:spinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="openDatePicker"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
 
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="#0B0B0B"
-        android:text="@string/button_search"
-        android:textColor="#BFA98C"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        </LinearLayout>
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="248dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_time"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerTime"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:focusableInTouchMode="true"
+                android:hapticFeedbackEnabled="false"
+                android:isScrollContainer="true"
+                android:keepScreenOn="false"
+                android:persistentDrawingCache="all|scrolling|none|animation"
+                android:popupBackground="@android:drawable/dialog_holo_dark_frame"
+                android:scrollbarSize="14dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="248dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/label_price"
+                android:textColor="#BFA98C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerPrice"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:focusableInTouchMode="true"
+                android:hapticFeedbackEnabled="false"
+                android:isScrollContainer="true"
+                android:keepScreenOn="false"
+                android:persistentDrawingCache="all|scrolling|none|animation"
+                android:popupBackground="@android:drawable/dialog_holo_dark_frame"
+                android:scrollbarSize="14dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="#0B0B0B"
+            android:text="@string/button_search"
+            android:textColor="#BFA98C"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</ScrollView>

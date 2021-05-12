@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/imageViewCinema"
             android:layout_width="match_parent"
-            android:layout_height="186dp"
+            android:layout_height="211dp"
             android:adjustViewBounds="false"
             android:foreground="@drawable/cinema_01_920x518" />
 
