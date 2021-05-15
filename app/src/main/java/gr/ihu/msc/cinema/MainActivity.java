@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String formatedDate = "";
 
-   @Override
+   @RequiresApi(api = Build.VERSION_CODES.O)
    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
        initDatePicker();
 
        dateButton = findViewById(R.id.datePickerButton);
-       //dateButton.setText(getTodaysDate());
-        
+       dateButton.setText(getTodaysDate());
+       dateButton.setTooltipText(getSearchTodaysDate());
        DataStore.Init(getApplicationContext());
 
        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
@@ -151,19 +151,20 @@ public class MainActivity extends AppCompatActivity {
     }*/
          buttonSearch.setOnClickListener(new View.OnClickListener() {
 
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
 
                 String filterTitle = textTitle.getText().toString();
                 int filterCategoryId = spinnerCategory.getSelectedItemPosition();
-                String filterDate = dateButton.getText().toString();
+                String filterDate = dateButton.getTooltipText().toString();
                 int filterTimeId = spinnerTime.getSelectedItemPosition();
                 int filterPriceId = spinnerPrice.getSelectedItemPosition();
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
 
                 intent.putExtra("TITLE", filterTitle);
                 intent.putExtra("CATEGORYID", filterCategoryId);
-                intent.putExtra("DATE", formatedDate);
+                intent.putExtra("DATE", filterDate);
                 intent.putExtra("TIMEID", filterTimeId);
                 intent.putExtra("PRICEID", filterPriceId);
 
@@ -191,16 +192,29 @@ public class MainActivity extends AppCompatActivity {
         return makeDateString(day, month, year);
     }
 
+    private String getSearchTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return  searchDateString(day, month, year);
+    }
+
     //Help function for DatePicker
     private void initDatePicker()
     {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
         {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day)
             {
                 month = month + 1;
                 String date = makeDateString(day, month, year);
+                String searchDate = searchDateString(day, month, year);
+                dateButton.setTooltipText(searchDate);
                 dateButton.setText(date);
             }
         };
@@ -224,12 +238,19 @@ public class MainActivity extends AppCompatActivity {
     {
         this.formatedDate = String.format("%04d-%02d-%02d", year, month, day);
         return day + "/" + month + "/" + year;
+        //return year + "-" + month + "-" + day;
+    }
+
+
+    private String searchDateString(int day, int month, int year)
+    {
+        this.formatedDate = String.format("%04d-%02d-%02d", year, month, day);
+        return year + "-" + month + "-" + day;
     }
 
     //    Help function for DatePicker
     public void openDatePicker(View view)
     {
-
         datePickerDialog.show();
     }
 

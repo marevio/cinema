@@ -23,14 +23,11 @@ public class DataStore {
     public static String KEY_DIRECTOR = "director";
     public static String KEY_ACTOR = "actor";
     public static String KEY_CATEGORYID = "categoryId";
-    public static String KEY_CATEGORYNAME = "CATEGORYNAME";
     public static String KEY_IMBDURL = "imbdUrl";
     public static String KEY_COVERURL = "coverUrl";
     public static String KEY_DATE = "viewDate";
     public static String KEY_TIMEID = "timeId";
-    public static String KEY_TIMENAME = "TIMENAME";
     public static String KEY_PRICEID = "priceId";
-    public static String KEY_PRICENAME = "PRICENAME";
     public static String KEY_DESCRIPTION= "description";
     public static String KEY_TRAILER= "trailer";
     public static String KEY_OWNER= "owner";
@@ -60,7 +57,7 @@ public class DataStore {
 
         //Προβλημα με τον κώδικα από το τοπικό αρχειο τρέχει
         //?title=%s&categoryId=%d&viewDate=%d&timeId=%d&priceId=%d", filterTitle, filterCategoryId, filterDate,filterTimeId,filterPriceId
-        // String urlString = String.format("https://nickpsaris.pythonanywhere.com/movies/?title=%s&categoryId=%d&viewDate=%s&timeId=%d&priceId=%d", filterTitle, filterCategoryId, filterDate, filterTimeId, filterPriceId);
+        //String urlString = String.format("https://nickpsaris.pythonanywhere.com/movies/?categoryId=%d", filterCategoryId);
 
     //parameters to read from filters if one or the rest of the filters is null
         String urlString = "https://nickpsaris.pythonanywhere.com/movies/";
