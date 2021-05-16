@@ -34,7 +34,7 @@ import gr.ihu.msc.cinema.classes.DataStore;
 import static java.lang.String.format;
 
 public class MainActivity extends AppCompatActivity {
-//init for permissions
+    //init for permissions
     private static final int MY_PERMISSIONS_REQUEST_CODE = 1001;
     public static String[] RequiredPermissions = {
             Manifest.permission.INTERNET,
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner  spinnerTime;
     private Spinner  spinnerPrice;
     private Button   buttonSearch;
+    private Button   xButton;
 
     // Date spiner
     private DatePickerDialog datePickerDialog;
@@ -59,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String formatedDate = "";
 
-   @RequiresApi(api = Build.VERSION_CODES.O)
-   protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -69,16 +70,17 @@ public class MainActivity extends AppCompatActivity {
         spinnerTime = (Spinner)findViewById(R.id.spinnerTime);
         spinnerPrice = (Spinner)findViewById(R.id.spinnerPrice);
         buttonSearch = (Button)findViewById(R.id.buttonSearch);
+        xButton = (Button)findViewById(R.id.xButton);
 
-       //initialize Date picker set today's Date
-       initDatePicker();
+        //initialize Date picker set today's Date
+        initDatePicker();
 
-       dateButton = findViewById(R.id.datePickerButton);
-       dateButton.setText(getTodaysDate());
-       dateButton.setTooltipText(getSearchTodaysDate());
-       DataStore.Init(getApplicationContext());
+        dateButton = findViewById(R.id.datePickerButton);
+        //dateButton.setText(getTodaysDate());
 
-       ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
+        DataStore.Init(getApplicationContext());
+
+        ArrayAdapter<CharSequence> categoryAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.movies_categories,
                 android.R.layout.simple_spinner_item
@@ -88,46 +90,46 @@ public class MainActivity extends AppCompatActivity {
         spinnerCategory.setAdapter(categoryAdapter);
 
 
-       ArrayAdapter<CharSequence> timeAdapter = ArrayAdapter.createFromResource(
-               this,
-               R.array.movies_time,
-               android.R.layout.simple_spinner_item
-       );
-       timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       spinnerTime.setAdapter(timeAdapter);
+        ArrayAdapter<CharSequence> timeAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.movies_time,
+                android.R.layout.simple_spinner_item
+        );
+        timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerTime.setAdapter(timeAdapter);
 
 
 
-       ArrayAdapter<CharSequence> priceAdapter = ArrayAdapter.createFromResource(
-               this,
-               R.array.movies_price,
-               android.R.layout.simple_spinner_item
-       );
-       priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       spinnerPrice.setAdapter(priceAdapter);
+        ArrayAdapter<CharSequence> priceAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.movies_price,
+                android.R.layout.simple_spinner_item
+        );
+        priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPrice.setAdapter(priceAdapter);
 
+
+        spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                                                                            @Override
+                                                                            public void onGlobalLayout() {
+                                                                                ((TextView) spinnerCategory.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
+                                                                            }
+                                                                        }
+        );
 
         spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                ((TextView) spinnerCategory.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
+                ((TextView) spinnerTime.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
             }
-        }
-        );
+        } );
 
-       spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-           @Override
-           public void onGlobalLayout() {
-               ((TextView) spinnerTime.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
-           }
-       } );
-
-       spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-           @Override
-           public void onGlobalLayout() {
-               ((TextView) spinnerPrice.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
-           }
-       } );
+        spinnerCategory.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                ((TextView) spinnerPrice.getSelectedView()).setTextColor(Color.rgb(191,169,140) );
+            }
+        } );
 
 
 
@@ -149,22 +151,21 @@ public class MainActivity extends AppCompatActivity {
         });
         return true;
     }*/
-         buttonSearch.setOnClickListener(new View.OnClickListener() {
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
 
-            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
 
                 String filterTitle = textTitle.getText().toString();
                 int filterCategoryId = spinnerCategory.getSelectedItemPosition();
-                String filterDate = dateButton.getTooltipText().toString();
+                String filterDate = dateButton.getText().toString();
                 int filterTimeId = spinnerTime.getSelectedItemPosition();
                 int filterPriceId = spinnerPrice.getSelectedItemPosition();
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
 
                 intent.putExtra("TITLE", filterTitle);
                 intent.putExtra("CATEGORYID", filterCategoryId);
-                intent.putExtra("DATE", filterDate);
+                intent.putExtra("DATE", formatedDate);
                 intent.putExtra("TIMEID", filterTimeId);
                 intent.putExtra("PRICEID", filterPriceId);
 
@@ -172,12 +173,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-         // executes the new permissions mechanism(from android M and later)
-       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-           if (!checkPermissions()){
-               requestPermissions(RequiredPermissions, MY_PERMISSIONS_REQUEST_CODE);
-           }
-       }
+
+        //Delete everything
+        xButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textTitle.setText(null);
+                spinnerCategory.setSelection(0);
+                dateButton.setText(null);
+                formatedDate = "";
+                spinnerTime.setSelection(0);
+                spinnerPrice.setSelection(0);
+            }
+        });
+
+        // executes the new permissions mechanism(from android M and later)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!checkPermissions()){
+                requestPermissions(RequiredPermissions, MY_PERMISSIONS_REQUEST_CODE);
+            }
+        }
 
     }
 
@@ -192,29 +207,16 @@ public class MainActivity extends AppCompatActivity {
         return makeDateString(day, month, year);
     }
 
-    private String getSearchTodaysDate()
-    {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        month = month + 1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        return  searchDateString(day, month, year);
-    }
-
     //Help function for DatePicker
     private void initDatePicker()
     {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
         {
-            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day)
             {
                 month = month + 1;
                 String date = makeDateString(day, month, year);
-                String searchDate = searchDateString(day, month, year);
-                dateButton.setTooltipText(searchDate);
                 dateButton.setText(date);
             }
         };
@@ -238,19 +240,12 @@ public class MainActivity extends AppCompatActivity {
     {
         this.formatedDate = String.format("%04d-%02d-%02d", year, month, day);
         return day + "/" + month + "/" + year;
-        //return year + "-" + month + "-" + day;
-    }
-
-
-    private String searchDateString(int day, int month, int year)
-    {
-        this.formatedDate = String.format("%04d-%02d-%02d", year, month, day);
-        return year + "-" + month + "-" + day;
     }
 
     //    Help function for DatePicker
     public void openDatePicker(View view)
     {
+
         datePickerDialog.show();
     }
 

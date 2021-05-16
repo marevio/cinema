@@ -32,17 +32,35 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextTitle"
+        <LinearLayout
+            android:id="@+id/LinearHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textColor="#BFA98C"
-            android:textStyle="bold" />
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="335dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#BFA98C"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/xButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/backgroud_cinema"
+                android:text="X"
+                app:backgroundTint="@color/backgroud_cinema" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textViewCategory"
